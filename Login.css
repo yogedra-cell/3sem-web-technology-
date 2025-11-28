@@ -1,0 +1,112 @@
+/* RESET & DEFAULT */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    image-rendering: crisp-edges;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* WRAPPER BOX */
+
+.wrapper {
+    width: 350px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.wrapper h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #000;
+}
+
+
+/* INPUT FIELDS */
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 40px 12px 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 225, 225, 0.5);
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-box input::placeholder {
+    color: #666;
+    font-size: 18px;
+}
+
+
+/* ICON INSIDE INPUT */
+
+.input-box i {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #555;
+}
+
+
+/* REMEMBER + FORGOT PASSWORD */
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+/* BUTTON */
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #302b63;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #24243e;
+}
+
+
+/* REGISTER LINK */
+
+.register-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #302b63;
+}
