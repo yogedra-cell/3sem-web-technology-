@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Find your account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Forgot password.css" />
+    <script src="./forgot.js"></script>
+
+</head>
+
+<body>
+    <script src="forgot.js"></script>
+    <div class="screen" role="main" aria-label="Find your account screen">
+        <div class="top-bleed" aria-hidden="true"></div>
+        <div class="content">
+            <div class="back">
+                <button aria-label="Back" onclick="history.back()">
+          <!-- simple left arrow SVG -->
+          <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+            </div>
+
+            <h1 id="heading">Find your account</h1>
+            <p class="lead" id="subheading">Enter your mobile number.</p>
+
+            <div class="input-wrap">
+                <input id="mainInput" class="field" type="text" inputmode="numeric" placeholder="Mobile number">
+            </div>
+
+            <button class="btn" id="continueBtn">Continue</button>
+
+            <div style="text-align:center;">
+                <div id="toggleLink" class="secondary-link" role="button" tabindex="0" aria-pressed="false">
+                    Search by email address
+                </div>
+            </div>
+
+            <div class="spacer" aria-hidden="true"></div>
+        </div>
+    </div>
+</body>
+
+</html>
