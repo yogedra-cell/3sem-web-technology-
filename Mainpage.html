@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ne">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="Mainpage.css">
+</head>
+
+<body>
+    <i class="fa-solid fa-house"></i>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">PE</div>
+                <div>
+                    <h1>व्यक्तिगत घटना दर्ता</h1>
+                    <p class="lead">व्यक्तिगत घटना — जन्म,विवाह,बसाइसाइ,मृत्यु,सम्वन्धबिछेत आदिका लागि</p>
+                </div>
+            </div>
+
+            <nav aria-label="Main">
+                <a class="btn btn-ghost" href="#help" style="text-decoration:none;">मद्दत</a>
+            </nav>
+        </header>
+
+        <main class="grid">
+            <!-- LEFT: form -->
+            <section class="card" aria-labelledby="form-title">
+                <h2 id="form-title" style="margin-bottom:12px">नयाँ घटना आवेदन</h2>
+
+                <form action="/submit-event" method="post" enctype="multipart/form-data" novalidate>
+                    <!-- Contact / organizer -->
+                    <div class="field">
+                        <label for="organizer"> दर्ता गर्ने व्यक्तिकाे नाम <span style="color:#dc2626"></span></label>
+                        <input id="organizer" name="organizer" type="text" required placeholder="तपाईंको नाम" />
+                        <div class="small">यो नाम आवेदनको हेडरमा देखिनेछ।</div>
+                    </div>
+
+                    <div class="row" style="margin-bottom:12px;">
+                        <div style="flex:1" class="field">
+                            <label for="contact_name">सम्पर्क व्यक्ति <span style="color:#dc2626">*</span></label>
+                            <input id="contact_name" name="contact_name" type="text" required placeholder="पूरा नाम" />
+                        </div>
+                        <div style="flex:1" class="field">
+                            <label for="phone">फोन नम्बर <span style="color:#dc2626">*</span></label>
+                            <input id="phone" name="phone" type="tel" pattern="[0-9+() -]{7,20}" required placeholder="+977 9XXXXXXXX" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div style="flex:1" class="field">
+                            <label for="email">इमेल</label>
+                            <input id="email" name="email" type="email" placeholder="example@mail.com" />
+                        </div>
+                        <div style="width:160px" class="field">
+                            <label for="event_type">घटना प्रकार</label>
+                            <select id="event_type" name="event_type">
+                <option value="wedding">विवाह</option>
+                <option value="conference">जन्म</option>
+                <option value="party">मृत्यु</option>
+                <option value="workshop">बसाइसराइ</option>
+                <option value="other">सम्वन्धबिछेत</option>
+              </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div style="flex:1" class="field">
+                            <label for="date">घटना मिति <span style="color:#dc2626">*</span></label>
+                            <input id="date" name="date" type="date" required />
+                        </div>
+                        <div style="width:160px" class="field">
+                            <label for="relation">सम्बन्ध</label>
+                            <select id="relation" name="relation">
+        <option value="father">बुवा</option>
+        <option value="mother">आमा</option>
+        <option value="brother">श्रीमान/श्रीमति</option>
+        <option value="brother">दाजु/भाइ</option>
+        <option value="sister">दिदी/बहिनी</option>
+        
+        
+    </select>
+                        </div>
+
+                    </div>
+
+                    <div class=" field ">
+                        <label for="venue ">घटना घटेकाे स्थान</label>
+                        <input id="venue " name="venue " type="text " placeholder="ठेगाना " />
+                    </div>
+
+                    <div class="field ">
+                        <label for="description ">घटनाको विवरण (छोटो)</label>
+                        <textarea id="description " name="description " placeholder="घटनाको छोटो विवरण जस्तै कहिले,कहाँ,कसरि भयाे "></textarea>
+
+                    </div>
+
+                    <div class="field ">
+                        <label for="attachment ">सहयोग कागजात/तस्वीर (वैकल्पिक)</label>
+                        <input id="attachment " name="attachment " type="file " accept="image/*,application/pdf " />
+                        <div class="small ">फाइल साइज सीमा: 5MB (सर्भर-साइडमा जाँच गरौं)।</div>
+                    </div>
+
+                    <div style="display:flex; align-items:center; gap:10px; margin-top:6px; ">
+                        <input id="terms " name="terms " type="checkbox " required />
+                        <label for="terms " style="font-size:14px; ">मले यहाँ भरेको जानकारी सही छ र नियम/शर्त स्वीकार्छु।</label>
+                    </div>
+
+                    <div class="actions ">
+                        <button type="submit " class="btn btn-primary ">आवेदन पेश गर्नुहोस्</button>
+                        <button type="reset " class="btn ">रद्द / फेरि भर्नु</button>
+                        <div style="margin-left:auto; ">
+                            <span class="small ">सबमिट गर्दा तपाईंलाई इमेल या SMS बाट पुष्टिकरण पठाइनेछ।</span>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- RIGHT: help / preview -->
+            <aside class="aside ">
+                <div class="card ">
+                    <h3>छिटो सुझाव</h3>
+                    <div class="info-list ">
+                        • अनिवार्य फिल्डहरू (*) भर्नुहोस्.<br> • फोन र मिति सही ढंगले लेख्नुहोस्।<br> • आवश्यक कागजात भएमा PDF/PNG/JPG अपलोड गर्नुहोस्।<br> • ठूलो फाइल अपलोड गर्दा इन्टरनेट स्पीड हेर्नुहोस्।<br> • सेवाको नियम/शर्त सम्झनुहोस्।
+                    </div>
+
+                    <div style="margin-top:12px; ">
+                        <h4>सबमिशन पूर्व पूर्वावलोकन</h4>
+                        <div class="preview " role="region " aria-live="polite ">
+                            यहाँ फर्म भर्दा छोटो पूर्वावलोकन देखाइनेछ (यस डेमोमा स्टाटिक)।
+                        </div>
+                    </div>
+
+                    <div style="margin-top:12px; ">
+                        <h4 id="help ">अर्को कदम</h4>
+                        <ol class="small " style="padding-left:18px; margin-top:6px; ">
+                            <li>सबमिट → पुष्टिकरण इमेल/SMS आउँनेछ।</li>
+                            <li>प्रशासनिक जाँच → पास भए तत्काल अनुमति/नोटिस।</li>
+                            <li>सम्पर्कको लागि फोन/इमेल प्रयोग गरिनेछ।</li>
+                        </ol>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            © <span id="year "></span> EventForm • सबै अधिकार सुरक्षित
+        </footer>
+    </div>
+
+    <script>
+        // छोटो enhancement: footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
